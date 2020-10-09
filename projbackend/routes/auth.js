@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 const { check } = require('express-validator');
 
-const {signout, signup, signin} = require('../controllers/auth')
+const {signout, signup, signin, isSignedIn} = require('../controllers/auth')
 
 router.post('/signup', [
     check("name", "Name should have a minimum length of 3").isLength({ min:3 }),
