@@ -104,3 +104,8 @@ exports.isAdmin = (req,res,next) => {
     next();
 }
 
+exports.sampleMiddleware = (req,res,next) => {
+    const {_id} = jwt.decode(req.headers.authorization);
+    console.log(_id);
+    next();
+}
